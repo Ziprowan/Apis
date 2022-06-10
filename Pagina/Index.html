@@ -4,30 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>LiveForms</title>
+    <link rel="stylesheet" href="./style.css">
+  
 </head>
 <body>
 
-    <!-- BASE DE CALCULADORA SENCILLO -->
+    <!-- MENU SUPERIOR -->
+  
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Formulario</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="index.html">Formulario</a>
+                <a class="nav-link" href="calculadora.html">Calculadora</a>
+                </nav>
+            </div>
+        </header>
+  
+     <!-- BASE DE FORMULARIO SENCILLO -->
+  
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Nombre" placeholder="Agrega Nombre">
+                    </div>
+            
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Apellido" placeholder="Agrega Apellidos">
+                    </div>
+            
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="Direccion" placeholder="Agrega Direccion">
+                    </div>
+                </div>
 
-    <input class="campos" type="text" id="numero1" placeholder="Numero 1"><br> 
-    <input class="campos"type="text" id="numero2" placeholder="Numero 2"><br>
-    <button onclick="suma()">Sumar</button>
-    <button onclick="resta()">Restar</button>
-    <button onclick="multiplicacion()">Multiplicar</button>
-    <button onclick="division()">Dividir</button>
+                <button type="submit" class="btn btn-lg btn-secondary btn-block" onclick="iniciarSaludo()">Ingresar</button>
+    
+            </div>
+        </div>
 
-
-    <!-- BASE DE FORMULARIO SENCILLO -->
-
-    <input class="campos"type="text" id="Nombre" placeholder="Nombre"><br> 
-    <input class="campos"type="text" id="Apellido" placeholder="Apellido"><br>
-    <input class="campos"type="text" id="Direccion" placeholder="Direccion"><br>
-
-    <button type="submit" onclick="iniciarSaludo()">Guardar</button>
-
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Trabajo para <a href="https://www.ibero.edu.co/">Corporación Universitaria Iberoamericana</a>, by <a href="https://www.twitch.tv/ziprowan">@Ziprowan</a>.</p>
+            </div>
+        </footer>
+    
+    </div>
+  
     <script src="./scrip.js"></script>
 
 </body>

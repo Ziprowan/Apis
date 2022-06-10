@@ -74,12 +74,13 @@ var division =function(){
 
 var iniciarSaludo =function(){
 
-    var num1 = document.getElementById('numero1').value;
-    var num2 = document.getElementById('numero2').value;
+    var nom = document.getElementById('Nombre').value;
+    var ape = document.getElementById('Apellido').value
+    var dir = document.getElementById('Direccion').value
 
-    var payload = "numero1="+ num1 + "&numero2=" + num2
+    var payload = "Nombre="+ nom + "&Apellido=" + ape + "&Direccion=" + dir
     
-    Post("http://localhost:3000/division",payload,function(Respuesta){
+    Post("http://localhost:3000/iniciarSaludo",payload,function(Respuesta){
         console.log(Respuesta)
     })
 }

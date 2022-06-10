@@ -50,6 +50,15 @@ app.post("/division", function(request,response){
 
 })
 
+app.post("/iniciarSaludo", function(request,response){
+
+    var Nombre = request.body.Nombre
+    var Apellido = request.body.Apellido
+    var Direccion = request.body.Direccion
+
+    response.json({mensaje:'Bienvenid@ '+ Nombre + ' ' + Apellido})
+
+})
 
 app.use('/',express.static(__dirname + '/Pagina'))
 
