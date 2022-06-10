@@ -6,37 +6,49 @@ app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended:true}))
 
 
-app.post("/sumar", function(request,response){
+app.post("/suma", function(request,response){
 
-    var number1 = parseInt(request.body.num1)
-    var number2 = parseInt(request.body.num2)
+    var num1 = parseInt(request.body.numero1)
+    var num2 = parseInt(request.body.numero2)
 
-    var resultado = number1 + number2
+    var resultado = num1 + num2
 
-    response.json({mensaje:'El resultado es: '+ resultado})
+    response.json({mensaje:'El resultado es:'+ resultado})
 
 })
 
-app.post("/Formulario", function(request,response){
+app.post("/resta", function(request,response){
 
-    var Nombre = request.body.nom
-    var Apellido = request.body.apel
-    var Direccion = request.body.dir
+    var num1 = parseInt(request.body.numero1)
+    var num2 = parseInt(request.body.numero2)
 
-    if (Nombre == null || Nombre == "" || Nombre == undefined){
-        response.json({mensaje:"Error!"})
-    }
-    else if (Apellido == null ||  Apellido == "" || Apellido == undefined){
-        response.json({mensaje:"Error!"})
-    }
-    else if (Direccion == null || Direccion == "" || Direccion == undefined){
-        response.json({mensaje:"Error!"})
-    }
-    else{
-        response.json('Bienvenid@'+ Nombre + '' + Apellido)
-    }
+    var resultado = num1 - num2
+
+    response.json({mensaje:'El resultado es:'+ resultado})
+
 })
 
+app.post("/multiplicacion", function(request,response){
+
+    var num1 = parseInt(request.body.numero1)
+    var num2 = parseInt(request.body.numero2)
+
+    var resultado = num1 * num2
+
+    response.json({mensaje:'El resultado es:'+ resultado})
+
+})
+
+app.post("/division", function(request,response){
+
+    var num1 = parseInt(request.body.numero1)
+    var num2 = parseInt(request.body.numero2)
+
+    var resultado = num1 / num2
+
+    response.json({mensaje:'El resultado es:'+ resultado})
+
+})
 
 
 app.use('/',express.static(__dirname + '/Pagina'))

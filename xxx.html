@@ -1,0 +1,75 @@
+var datos = []
+
+app.post("/iniciarSaludo", function(request,response){
+
+    console.log(resquest.bady.nom)
+
+    var Nombre = request.body.nom
+    var Apellido = request.body.apel
+    var Direccion = request.body.dir
+
+    if (Nombre == null || Nombre == "" || Nombre == undefined){
+        response.json({mensaje:"Error!"})
+    }
+    else if (Apellido == null ||  Apellido == "" || Apellido == undefined){
+        response.json({mensaje:"Error!"})
+    }
+    else if (Direccion == null || Direccion == "" || Direccion == undefined){
+        response.json({mensaje:"Error!"})
+    }
+    else{
+        datos.push({Nombre: Nombre, Apellido: Apellido, Direccion: Direccion})
+
+        response.json('Bienvenid@'+ Nombre + '' + Apellido)
+    }
+})
+
+var resta =function(){
+
+    var num1 = document.getElementById('numero1').value;
+    var num2 = document.getElementById('numero2').value;
+
+    var payload = "numero1="+ num1 + "&numero2=" + num2
+
+    Post("http://localhost:3000/Calcular",payload,function(Respuesta){
+        console.log(Respuesta)
+    })
+}
+
+var multiplicacion =function(){
+    var num1 = document.getElementById('numero1').value;
+    var num2 = document.getElementById('numero2').value;
+
+    var payload = "numero1="+ num1 + "&numero2=" + num2
+    
+    Post("http://localhost:3000/Calcular",payload,function(Respuesta){
+        console.log(Respuesta)
+    })
+}
+
+var division =function(){
+
+    var num1 = document.getElementById('numero1').value;
+    var num2 = document.getElementById('numero2').value;
+
+    var payload = "numero1="+ num1 + "&numero2=" + num2
+    
+    Post("http://localhost:3000/Calcular",payload,function(Respuesta){
+        console.log(Respuesta)
+    })
+}
+
+var iniciarSaludo =function(){
+
+    var nom = document.getElementById('Nombre').value;
+    var ape = document.getElementById('Apellido').value;
+    var dir = document.getElementById('Direccion').value;
+    
+    var payload = "Nombre="+ nom + "&Apellido=" + ape + "&Direccion=" + dir + ""
+
+    console.log(payload)
+    
+    Post("http://localhost:3000/iniciarSaludo",payload,function(Respuesta){
+        console.log(Respuesta)
+    })
+}
