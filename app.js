@@ -60,6 +60,7 @@ app.post("/iniciarSaludo", function(request,response){
 
 })
 
+
 app.use('/',express.static(__dirname + '/Pagina'))
 
 app.listen(3000,function(){
