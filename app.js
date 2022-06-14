@@ -1,68 +1,21 @@
-var express = require('express')
-var app = express();
+// Configuracion
+
+var express = require('express');
+var config = require('./config.js').config
+global.app = express();
 
 var bodyparser = require('body-parser')
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended:true}))
 
+// Link a rutas.js
 
-app.post("/suma", function(request,response){
+require('./rutas.js')
 
-    var num1 = parseInt(request.body.numero1)
-    var num2 = parseInt(request.body.numero2)
-
-    var resultado = num1 + num2
-
-    response.json({mensaje:'El resultado es:'+ resultado})
-
-})
-
-app.post("/resta", function(request,response){
-
-    var num1 = parseInt(request.body.numero1)
-    var num2 = parseInt(request.body.numero2)
-
-    var resultado = num1 - num2
-
-    response.json({mensaje:'El resultado es:'+ resultado})
-
-})
-
-app.post("/multiplicacion", function(request,response){
-
-    var num1 = parseInt(request.body.numero1)
-    var num2 = parseInt(request.body.numero2)
-
-    var resultado = num1 * num2
-
-    response.json({mensaje:'El resultado es:'+ resultado})
-
-})
-
-app.post("/division", function(request,response){
-
-    var num1 = parseInt(request.body.numero1)
-    var num2 = parseInt(request.body.numero2)
-
-    var resultado = num1 / num2
-
-    response.json({mensaje:'El resultado es:'+ resultado})
-
-})
-
-app.post("/iniciarSaludo", function(request,response){
-
-    var Nombre = request.body.Nombre
-    var Apellido = request.body.Apellido
-    var Direccion = request.body.Direccion
-
-    response.json({mensaje:'Bienvenid@ '+ Nombre + ' ' + Apellido})
-
-})
-
+// Configuracion
 
 app.use('/',express.static(__dirname + '/Pagina'))
 
-app.listen(3000,function(){
-    console.log('server ready in port 3000')
+app.listen(config.puerto,function(){
+    console.log('server ready in port '+ config.puerto)
 })
