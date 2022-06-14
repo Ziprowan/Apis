@@ -7,7 +7,7 @@ var Post = function(url,payload,callback){
     
     xhr.addEventListener("readystatechange",function(){
         if(this.readystate == 4){
-        return callback(this.responseText)
+            return callback(this.responseText)
         }
     })
 }
@@ -17,19 +17,7 @@ var suma =function(){
     var num1 = document.getElementById('numero1').value;
     var num2 = document.getElementById('numero2').value;
 
-    var payload = "numero1="+ num1 + "&numero2=" + num2
-    
-    Post("http://localhost:3000/suma",payload,function(Respuesta){
-        console.log(Respuesta)
-    })
-}
-
-var suma =function(){
-
-    var num1 = document.getElementById('numero1').value;
-    var num2 = document.getElementById('numero2').value;
-
-    var payload = "numero1="+ num1 + "&numero2=" + num2
+    var payload = "numero1="+ num1 + "&numero2="+ num2
     
     Post("http://localhost:3000/suma",payload,function(Respuesta){
         console.log(Respuesta)
@@ -84,6 +72,4 @@ var iniciarSaludo =function(){
         console.log(Respuesta)
     })
 }
-
-
 
