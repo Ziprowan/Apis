@@ -3,6 +3,7 @@
 var express = require('express');
 var config = require('./config.js').config
 global.app = express();
+var datos = []
 
 var bodyparser = require('body-parser')
 app.use(bodyparser.json())

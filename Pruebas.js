@@ -22,3 +22,4 @@ if(direccion == undefined || direccion == null || direccion == ''){
     response.json({state:false,mensaje:"Dato Direccion incorrecto"})
     return false;
 }
+
